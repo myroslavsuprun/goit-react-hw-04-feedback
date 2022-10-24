@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
-import StatisticsSection from './StatisticsSection/StatisticsSection';
+import Statistics from './Statistics/Statistics';
 import Section from './Section/Section';
 
 class App extends Component {
@@ -11,7 +11,9 @@ class App extends Component {
   };
 
   onLeaveFeedback = optionChosen => {
-    this.setState({ [optionChosen]: this.state[optionChosen] + 1 });
+    this.setState(prevState => ({
+      [optionChosen]: prevState[optionChosen] + 1,
+    }));
   };
 
   countTotalFeedback = () => {
@@ -25,6 +27,7 @@ class App extends Component {
   render() {
     const { good, neutral, bad } = this.state;
     const options = Object.keys(this.state);
+
     return (
       <>
         <Section title="Please leave feedback">
@@ -34,7 +37,7 @@ class App extends Component {
           />
         </Section>
         <Section title="Statistics">
-          <StatisticsSection
+          <Statistics
             good={good}
             neutral={neutral}
             bad={bad}

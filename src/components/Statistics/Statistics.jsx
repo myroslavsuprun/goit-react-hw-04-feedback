@@ -1,27 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import css from './StatisticsSection.module.css';
+import css from './Statistics.module.css';
 import Notification from 'components/Notification/Notification';
 
 class StatisticsSection extends Component {
   static defaultProps = {
-    // good: 0,
-    // neutral: 0,
-    // bad: 0,
-    // total: 0,
-    // positiveFeedback: 0,
-  };
-
-  state = {
-    good: this.props.good,
-    neutral: this.props.neutral,
-    bad: this.props.bad,
-    total: this.props.total,
-    positiveFeedback: this.props.positiveFeedback,
+    good: 0,
+    neutral: 0,
+    bad: 0,
+    total: 0,
+    positiveFeedback: 0,
   };
 
   render() {
-    const { good, neutral, bad, total, positiveFeedback } = this.state;
+    const { good, neutral, bad, total, positiveFeedback } = this.props;
     if (total <= 0) return <Notification message="There is no feedback" />;
 
     return (
