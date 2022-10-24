@@ -1,0 +1,17 @@
+.statistics__list {
+    padding-left: 12px;
+    display: flex;
+    flex-direction: column;
+
+    list-style-type: none;
+}
+
+.statistics__item {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.statistics__span {
+    margin-left: 8px;
+    font-weight: 500;
+}
