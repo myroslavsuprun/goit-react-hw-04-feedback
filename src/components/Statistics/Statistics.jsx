@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
-import Notification from 'components/Notification/Notification';
 
 function StatisticsSection({
   good = 0,
@@ -10,8 +9,6 @@ function StatisticsSection({
   total = 0,
   positiveFeedback = 0,
 }) {
-  if (total <= 0) return <Notification message="There is no feedback" />;
-
   return (
     <ul className={css.statistics__list}>
       <li className={css.statistics__item}>
